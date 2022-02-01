@@ -4,12 +4,12 @@ import Search from './Search';
 
 const Main = () => {
 
-  const [pokemonName, setPokemonName] = useState('https://pokeapi.co/api/v2/pokemon/bulbasaur');
+  const [pokemonName, setPokemonName] = useState('stich');
   
   return (
     <main>
       <Search setPokemonName={setPokemonName} />
-      <DisplayPokemon />
+      <DisplayPokemon pokemonName={pokemonName}/>
     </main>
   );
 };

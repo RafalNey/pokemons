@@ -7,11 +7,12 @@ const DisplayPokemon = ({ pokemonName} ) => {
 
   useEffect(() => {
     fetch(
-      `https://pokeapi.co/api/v2/pokemon/${[pokemonName]}/`
+      `https://pokeapi.co/api/v2/pokemon/${pokemonName}`
     )
       .then((response) => response.json())
-      .then((pokemonName) => {
-        setPokemonData(pokemonName);
+      .then((pokemon) => {
+
+        setPokemonData(pokemon);
         setIsLoading(false);
       });
   }, [pokemonName]);
@@ -21,10 +22,10 @@ const DisplayPokemon = ({ pokemonName} ) => {
   ) : (
     <div>
       <h2>
-        {pokemonData.name}
+        {pokemonName}
       </h2>
       <p>
-        {`https://pokeapi.co/api/v2/pokemon/${[pokemonName]}/`}
+        {`https://pokeapi.co/api/v2/pokemon/${pokemonName}`}
       </p>
     </div>
   );
